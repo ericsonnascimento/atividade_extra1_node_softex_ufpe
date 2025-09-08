@@ -46,13 +46,13 @@ de 401 a 600.......................30% do valor do saldo médio
 acima de 601......................40% do valor do saldo médio
 
 <h3>Função 4</h3>
-Um vendedor necessita de um algoritmo que calcule o preço total devido por um cliente. O algoritmo deve receber o código de um produto e a quantidade comprada e calcular o preço total, usando a tabela abaixo:
-Código do produto  Preço unitário
-• 5  R$ 32,00
-• 6  R$ 45,00
-• 2  R$ 37,00
-• 5  R$ 32,00
-• 6  R$ 45,00
+Um vendedor necessita de um algoritmo que calcule o preço total devido por um cliente. O algoritmo deve receber o código de um produto e a quantidade comprada e calcular o preço total, usando a tabela abaixo:<br/>
+Código do produto  Preço unitário<br/>
+• 5  R$ 32,00<br/>
+• 6  R$ 45,00<br/>
+• 2  R$ 37,00<br/>
+• 5  R$ 32,00<br/>
+• 6  R$ 45,00<br/>
 
 <h3>Função 5</h3>
 Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo com o cargo, conforme a tabela abaixo. Faça um algoritmo que leia o salário e o cargo de um funcionário e calcule o novo salário. Se o cargo do funcionário não estiver na tabela, ele deverá, então, receber 40% de aumento. Mostre o salário antigo, o novo salário e a diferença.
