@@ -123,24 +123,39 @@ function calcularMedia() {
     //switch que relaciona a variável menu com as opçoes escolhidas entre 1, 2 e 3
     switch (menu) {
         case 1:
-            let mediaAritmetica = (nota1 + nota2 + nota3) / 3;
-            console.log(`A média Aritimética das três notas é: ${mediaAritmetica.toFixed(2)}`);
-            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                let mediaAritmetica = (nota1 + nota2 + nota3) / 3;
+                console.log(`A média Aritimética das três notas é: ${mediaAritmetica.toFixed(2)}`);
+                console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            } else {
+                console.log('Error - Notas devem conter apenas números de 0 a 10!')
+            }
             break;
 
         case 2:
-            let mediaPonderada = (nota1 * 3 + nota2 * 3 + nota3 * 4) / (3 + 3 + 4);
-            console.log(`A média Ponderada(pesos 3,3,4) das três notas é: ${mediaPonderada.toFixed(2)}`);
-            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                let mediaPonderada = (nota1 * 3 + nota2 * 3 + nota3 * 4) / (3 + 3 + 4);
+                console.log(`A média Ponderada(pesos 3,3,4) das três notas é: ${mediaPonderada.toFixed(2)}`);
+                console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            } else {
+                console.log('Error - Notas devem conter apenas números de 0 a 10!')
+            }
             break;
         
         case 3:
-            let mediaHamonica = 3 / (1 / nota1 + 1 / nota2 + 1 / nota3);
-            console.log(`A média Harmônica das três notas é: ${mediaHamonica.toFixed(2)}`);
-            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                let mediaHamonica = 3 / (1 / nota1 + 1 / nota2 + 1 / nota3);
+                console.log(`A média Harmônica das três notas é: ${mediaHamonica.toFixed(2)}`);
+                console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            } else {
+                console.log('Error - Notas devem conter apenas números de 0 a 10!')
+            }
+            break;
+
+        default:
+            console.log('Error - Digita um código válido');
             break;
     }
-    
 }
 
 function calcularCredito() {
