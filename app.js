@@ -1,15 +1,3 @@
-/*
-console.log('=-=-=-=-=-=-SISTEMA DE CÁLCULO SALARIAL-=-=-=-=-=-=-=-');
-console.log('| Código | Cargo                | Percentual de Aumento |');
-console.log('|--------|----------------------|-----------------------|');
-console.log('| 1      | Escrituário          | 50%                   |');
-console.log('| 2      | Secretário           | 30%                   |');
-console.log('| 3      | Caixa                | 20%                   |');
-console.log('| 4      | Gerente              | 10%                   |');
-console.log('| 5      | Diretor              | 5%                    |');
-console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
-*/
-
 //chamando a biblioteca prompt-sync para gerar os prompts
 const prompt = require('prompt-sync') ([singint=true]);
 
@@ -169,8 +157,62 @@ function calcularDebido() {
 }
 
 function calcularAumento() {
-    let nun = parseInt(prompt('Digite um número: '))
-    console.log('Aumento')
+    const prompt = require('prompt-sync') ({ sigint:true });
+
+    console.log('=-=-=-=-=-=- SISTEMA DE AUMENTO SALARIAL -==-=-=-=-=-=-=-');
+    console.log('| Código | Cargo                | Percentual de Aumento |');
+    console.log('|--------|----------------------|-----------------------|');
+    console.log('| 101    | Gerente              | 10%                   |');
+    console.log('| 102    | Engenheiro           | 20%                   |');
+    console.log('| 103    | Técnico              | 30%                   |');
+    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+
+    let codCargo = parseFloat(prompt('Digite o código do funcionário: '));
+    let salarioFuncionario = parseFloat(prompt('Digite o salário do funcionário: '));
+
+    switch (codCargo) {
+        case 101:
+            let acrescimoEmPercentual10 = (salarioFuncionario * 0.1) + salarioFuncionario;
+            let diferencaEntreSalarios10 = acrescimoEmPercentual10 - salarioFuncionario;
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual10.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios10.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+        
+        case 102:
+            let acrescimoEmPercentual20 = (salarioFuncionario * 0.2) + salarioFuncionario;
+            let diferencaEntreSalarios20 = acrescimoEmPercentual20 - salarioFuncionario;
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual20.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios20.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        case 103:
+            let acrescimoEmPercentual30 = (salarioFuncionario * 0.3) + salarioFuncionario;
+            let diferencaEntreSalarios30 = acrescimoEmPercentual30 - salarioFuncionario;
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual30.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios30.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        default:
+            let acrescimoEmPercentual40 = (salarioFuncionario * 0.4) + salarioFuncionario;
+            let diferencaEntreSalarios40 = acrescimoEmPercentual40 - salarioFuncionario;
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log('ATENÇÃO: Código do funcionário não informado - Aplicado reajuste padrão de 40%')
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual40.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios40.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+    }
 }
 
 function menuInicial() {
