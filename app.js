@@ -111,7 +111,9 @@ function calcularMedia() {
     //switch que relaciona a variável menu com as opçoes escolhidas entre 1, 2 e 3
     switch (menu) {
         case 1:
+            //if de validação entre os número 0 à 10, caso digitado string ou outro número apresente erro
             if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                //formula e retorno
                 let mediaAritmetica = (nota1 + nota2 + nota3) / 3;
                 console.log(`A média Aritimética das três notas é: ${mediaAritmetica.toFixed(2)}`);
                 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -121,7 +123,9 @@ function calcularMedia() {
             break;
 
         case 2:
+            //if de validação entre os número 0 à 10, caso digitado string ou outro número apresente erro
             if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                //formula e retorno
                 let mediaPonderada = (nota1 * 3 + nota2 * 3 + nota3 * 4) / (3 + 3 + 4);
                 console.log(`A média Ponderada(pesos 3,3,4) das três notas é: ${mediaPonderada.toFixed(2)}`);
                 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -131,7 +135,9 @@ function calcularMedia() {
             break;
         
         case 3:
+            //if de validação entre os número 0 à 10, caso digitado string ou outro número apresente erro
             if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+                //formula e retorno
                 let mediaHamonica = 3 / (1 / nota1 + 1 / nota2 + 1 / nota3);
                 console.log(`A média Harmônica das três notas é: ${mediaHamonica.toFixed(2)}`);
                 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -141,6 +147,7 @@ function calcularMedia() {
             break;
 
         default:
+            //validando códigos digitados erradamente no submenu
             console.log('Error - Digita um código válido');
             break;
     }
@@ -157,21 +164,24 @@ function calcularDebido() {
 }
 
 function calcularAumento() {
-    const prompt = require('prompt-sync') ({ sigint:true });
-
+    //menu principal da função com legenda de opções de escolha
     console.log('=-=-=-=-=-=- SISTEMA DE AUMENTO SALARIAL -==-=-=-=-=-=-=-');
     console.log('| Código | Cargo                | Percentual de Aumento |');
     console.log('|--------|----------------------|-----------------------|');
     console.log('| 101    | Gerente              | 10%                   |');
     console.log('| 102    | Engenheiro           | 20%                   |');
     console.log('| 103    | Técnico              | 30%                   |');
+    console.log('|        | Outros               | 40%                   |');
     console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
 
-    let codCargo = parseFloat(prompt('Digite o código do funcionário: '));
+    //capitura do código do cardo e salário do funcionário
+    let codCargo = parseFloat(prompt('Digite o código do funcionário ou deixe em branco: '));
     let salarioFuncionario = parseFloat(prompt('Digite o salário do funcionário: '));
 
+    //interação com o submenu através do switch 
     switch (codCargo) {
         case 101:
+            //calculo e retorno
             let acrescimoEmPercentual10 = (salarioFuncionario * 0.1) + salarioFuncionario;
             let diferencaEntreSalarios10 = acrescimoEmPercentual10 - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -182,6 +192,7 @@ function calcularAumento() {
             break;
         
         case 102:
+            //calculo e retorno
             let acrescimoEmPercentual20 = (salarioFuncionario * 0.2) + salarioFuncionario;
             let diferencaEntreSalarios20 = acrescimoEmPercentual20 - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -192,6 +203,7 @@ function calcularAumento() {
             break;
 
         case 103:
+            //calculo e retorno
             let acrescimoEmPercentual30 = (salarioFuncionario * 0.3) + salarioFuncionario;
             let diferencaEntreSalarios30 = acrescimoEmPercentual30 - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
@@ -202,8 +214,10 @@ function calcularAumento() {
             break;
 
         default:
+            //calculo e retorno
             let acrescimoEmPercentual40 = (salarioFuncionario * 0.4) + salarioFuncionario;
             let diferencaEntreSalarios40 = acrescimoEmPercentual40 - salarioFuncionario;
+            //a ausência de dados em código ou a digitação errônea retornará o cálculo de 40$
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log('ATENÇÃO: Código do funcionário não informado - Aplicado reajuste padrão de 40%')
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
