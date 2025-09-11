@@ -39,24 +39,24 @@ notas, a opção escolhida pelo usuário e calcule a média.<br/>
 
 <h3>Função 3</h3>
 Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no último ano. Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio e o valor do crédito.<br/>
-Saldo médio.....................................Percentual<br/>
-de 0 a 200....................................nenhum crédito<br/>
+Saldo médio........................Percentual<br/>
+de 0 a 200.........................nenhum crédito<br/>
 de 201 a 400.......................20% do valor do saldo médio<br/>
 de 401 a 600.......................30% do valor do saldo médio<br/>
-acima de 601......................40% do valor do saldo médio<br/>
+acima de 601.......................40% do valor do saldo médio<br/>
 
 <h3>Função 4</h3>
 Um vendedor necessita de um algoritmo que calcule o preço total devido por um cliente. O algoritmo deve receber o código de um produto e a quantidade comprada e calcular o preço total, usando a tabela abaixo:<br/>
 Código do produto  Preço unitário:<br/>
-• 5  R$ 32,00<br/>
-• 6  R$ 45,00<br/>
-• 2  R$ 37,00<br/>
-• 5  R$ 32,00<br/>
-• 6  R$ 45,00<br/>
+• 5 ............... R$ 32,00<br/>
+• 6 ............... R$ 45,00<br/>
+• 2 ............... R$ 37,00<br/>
+• 5 ............... R$ 32,00<br/>
+• 6 ............... R$ 45,00<br/>
 
 <h3>Função 5</h3>
 Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo com o cargo, conforme a tabela abaixo. Faça um algoritmo que leia o salário e o cargo de um funcionário e calcule o novo salário. Se o cargo do funcionário não estiver na tabela, ele deverá, então, receber 40% de aumento. Mostre o salário antigo, o novo salário e a diferença.<br/>
 Código  Cargo  Percentual<br/>
-101  Gerente  10%<br/>
-102  Engenheiro  20%<br/>
-103  Técnico  30%<br/>
+101 ... Gerente .... 10%<br/>
+102 ... Engenheiro . 20%<br/>
+103 ... Técnico .... 30%<br/>
