@@ -163,6 +163,7 @@ function calcularDebido() {
     console.log('Débito')
 }
 
+//função para cálcular aumento salarial
 function calcularAumento() {
     //menu principal da função com legenda de opções de escolha
     console.log('=-=-=-=-=-=- SISTEMA DE AUMENTO SALARIAL -==-=-=-=-=-=-=-');
@@ -229,6 +230,7 @@ function calcularAumento() {
     }
 }
 
+//função para o menu principal
 function menuInicial() {
     console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
     console.log('|                                                                        |');
