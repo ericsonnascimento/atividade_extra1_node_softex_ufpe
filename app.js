@@ -153,11 +153,32 @@ function calcularMedia() {
     }
 }
 
+//função valida se o cliente tem saldo para ter acesso a crédito
 function calcularCredito() {
-    let nun = parseInt(prompt('Digite um número: '))
-    console.log('Débito')
+    //recebe o saldo do cliente
+    let saldoMedioAno = parseInt(prompt('Digite o saldo médio do último ano: '))
+    //variável de movimentação dos dados dentro do if
+    let acrescimo; 
     
+    //validação quanto ao saldo e os retornos caso passe
+    if (saldoMedioAno >= 0 && saldoMedioAno <= 200) {
+        console.log('Saldo insuficiente para disponibilizar crédito');
+    } else if (saldoMedioAno >= 201 && saldoMedioAno <= 400) {
+        acrescimo = saldoMedioAno * 0.2;
+        console.log(`Crédito disponível de R$ ${acrescimo.toFixed(2)}`);
+        console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+    } else if (saldoMedioAno >= 401 && saldoMedioAno <= 600) {
+        acrescimo = saldoMedioAno * 0.3;
+        console.log(`Crédito disponível de R$ ${acrescimo.toFixed(2)}`);
+        console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+    } else {
+        acrescimo = saldoMedioAno * 0.4;
+        console.log(`Crédito disponível de R$ ${acrescimo.toFixed(2)}`);
+        console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+    }      
+   
 }
+
 //função para calcular o débito de compra do cliente
 function calcularDebido() {
     //menu principal da função com legenda de opções de escolha
@@ -176,40 +197,41 @@ function calcularDebido() {
     //interação com o menu e captura da quantidade
     let menu = parseInt(prompt('Escolha um código do MENU: '));
     let quantidade = parseInt(prompt('Digite a quantidade: '));
+    let total;
 
     switch (menu){
         case 2:
             //multiplicação da quantidade do produto com o produto do dicionário
-            let totalCod2 = quantidade * produtos[2];
-            console.log(`O valor total referente ao produro (Camisa de Manga) é: R$${totalCod2.toFixed(2)}`);
+            total = quantidade * produtos[2];
+            console.log(`O valor total referente ao produro (Camisa de Manga) é: R$${total.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
         case 3:
             //multiplicação da quantidade do produto com o produto do dicionário
-            let totalCod3 = quantidade * produtos[3];
-            console.log(`O valor total referente ao produro (Caneca) é: R$${totalCod3.toFixed(2)}`);
+            total = quantidade * produtos[3];
+            console.log(`O valor total referente ao produro (Caneca) é: R$${total.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
         case 4:
             //multiplicação da quantidade do produto com o produto do dicionário
-            let totalCod4 = quantidade * produtos[4];
-            console.log(`O valor total referente ao produro (Bolsa) é: R$${totalCod4.toFixed(2)}`);
+            total = quantidade * produtos[4];
+            console.log(`O valor total referente ao produro (Bolsa) é: R$${total.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
         case 5:
             //multiplicação da quantidade do produto com o produto do dicionário
-            let totalCod5 = quantidade * produtos[5];
-            console.log(`O valor total referente ao produro (Vestido) é: R$${totalCod5.toFixed(2)}`);
+            total = quantidade * produtos[5];
+            console.log(`O valor total referente ao produro (Vestido) é: R$${total.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
         
         case 6:
             //multiplicação da quantidade do produto com o produto do dicionário
-            let totalCod6 = quantidade * produtos[6];
-            console.log(`O valor total referente ao produro (Bermuda) é: R$${totalCod6.toFixed(2)}`);
+            total = quantidade * produtos[6];
+            console.log(`O valor total referente ao produro (Bermuda) é: R$${total.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
@@ -235,53 +257,56 @@ function calcularAumento() {
     //capitura do código do cardo e salário do funcionário
     let codCargo = parseFloat(prompt('Digite o código do funcionário ou deixe em branco: '));
     let salarioFuncionario = parseFloat(prompt('Digite o salário do funcionário: '));
+    //variáveis que dão suporte as que estão dentro dos case
+    let acrescimoEmPercentual;
+    let diferencaEntreSalarios;
 
     //interação com o submenu através do switch 
     switch (codCargo) {
         case 101:
             //calculo e retorno
-            let acrescimoEmPercentual10 = (salarioFuncionario * 0.1) + salarioFuncionario;
-            let diferencaEntreSalarios10 = acrescimoEmPercentual10 - salarioFuncionario;
+            acrescimoEmPercentual = (salarioFuncionario * 0.1) + salarioFuncionario;
+            diferencaEntreSalarios = acrescimoEmPercentual - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
-            console.log(`Salário Novo R$${acrescimoEmPercentual10.toFixed(2)}`);
-            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios10.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
         
         case 102:
             //calculo e retorno
-            let acrescimoEmPercentual20 = (salarioFuncionario * 0.2) + salarioFuncionario;
-            let diferencaEntreSalarios20 = acrescimoEmPercentual20 - salarioFuncionario;
+            acrescimoEmPercentual = (salarioFuncionario * 0.2) + salarioFuncionario;
+            diferencaEntreSalarios = acrescimoEmPercentual - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
-            console.log(`Salário Novo R$${acrescimoEmPercentual20.toFixed(2)}`);
-            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios20.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
         case 103:
             //calculo e retorno
-            let acrescimoEmPercentual30 = (salarioFuncionario * 0.3) + salarioFuncionario;
-            let diferencaEntreSalarios30 = acrescimoEmPercentual30 - salarioFuncionario;
+            acrescimoEmPercentual = (salarioFuncionario * 0.3) + salarioFuncionario;
+            diferencaEntreSalarios = acrescimoEmPercentual - salarioFuncionario;
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
-            console.log(`Salário Novo R$${acrescimoEmPercentual30.toFixed(2)}`);
-            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios30.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
 
         default:
             //calculo e retorno
-            let acrescimoEmPercentual40 = (salarioFuncionario * 0.4) + salarioFuncionario;
-            let diferencaEntreSalarios40 = acrescimoEmPercentual40 - salarioFuncionario;
+            acrescimoEmPercentual = (salarioFuncionario * 0.4) + salarioFuncionario;
+            diferencaEntreSalarios = acrescimoEmPercentual - salarioFuncionario;
             //a ausência de dados em código ou a digitação errônea retornará o cálculo de 40$
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log('ATENÇÃO: Código do funcionário não informado - Aplicado reajuste padrão de 40%')
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             console.log(`Salário Antigo: R$${salarioFuncionario.toFixed(2)}`);
-            console.log(`Salário Novo R$${acrescimoEmPercentual40.toFixed(2)}`);
-            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios40.toFixed(2)}`);
+            console.log(`Salário Novo R$${acrescimoEmPercentual.toFixed(2)}`);
+            console.log(`Valor do Acrescimo R$${diferencaEntreSalarios.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;
     }
@@ -296,7 +321,7 @@ function menuInicial() {
     console.log('|--------|---------------------------|-----------------------------------|');
     console.log('|    1   | Classificar Nadador       | Turma x Idade                     |');
     console.log('|    2   | Calcular Média            | Média entre 3 notas               |');
-    console.log('|    3   | Calcular Cérdito          | Retorna valor médio e crédito     |');
+    console.log('|    3   | Calcular Crédito          | Retorna valor médio e crédito     |');
     console.log('|    4   | Calcular Débito Total     | Quant. de produto com valor total |');
     console.log('|    5   | Calcular Aumento Salarial | Acrércimo por percentual          |');
     console.log('|    6   | Menu                      | Impressão do Menu                 |');
