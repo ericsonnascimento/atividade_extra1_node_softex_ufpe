@@ -155,12 +155,69 @@ function calcularMedia() {
 
 function calcularCredito() {
     let nun = parseInt(prompt('Digite um número: '))
-    console.log('Idade')
-}
-
-function calcularDebido() {
-    let nun = parseInt(prompt('Digite um número: '))
     console.log('Débito')
+    
+}
+//função para calcular o débito de compra do cliente
+function calcularDebido() {
+    //menu principal da função com legenda de opções de escolha
+    console.log('=-=-=-= SISTEMA DE CALCULO TOTAL -=-=-=-');
+    console.log('| Código | Produto          | Valor R$ |');
+    console.log('|--------|------------------|----------|');
+    console.log('|   2    | Camisa de Manga  | R$ 32,00 |');
+    console.log('|   3    | Caneca           | R$ 45,00 |');
+    console.log('|   4    | Bolsa            | R$ 37,00 |');
+    console.log('|   5    | Vestido          | R$ 32,00 |');
+    console.log('|   6    | Bermuda          | R$ 45,00 |');
+    console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=');
+    //dicionário com cod. e valor do produto, podendo ser auterado sem comprometer o código
+    let produtos = {2:32, 3:45, 4:37, 5:32, 6:45};
+    
+    //interação com o menu e captura da quantidade
+    let menu = parseInt(prompt('Escolha um código do MENU: '));
+    let quantidade = parseInt(prompt('Digite a quantidade: '));
+
+    switch (menu){
+        case 2:
+            //multiplicação da quantidade do produto com o produto do dicionário
+            let totalCod2 = quantidade * produtos[2];
+            console.log(`O valor total referente ao produro (Camisa de Manga) é: R$${totalCod2.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        case 3:
+            //multiplicação da quantidade do produto com o produto do dicionário
+            let totalCod3 = quantidade * produtos[3];
+            console.log(`O valor total referente ao produro (Caneca) é: R$${totalCod3.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        case 4:
+            //multiplicação da quantidade do produto com o produto do dicionário
+            let totalCod4 = quantidade * produtos[4];
+            console.log(`O valor total referente ao produro (Bolsa) é: R$${totalCod4.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        case 5:
+            //multiplicação da quantidade do produto com o produto do dicionário
+            let totalCod5 = quantidade * produtos[5];
+            console.log(`O valor total referente ao produro (Vestido) é: R$${totalCod5.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+        
+        case 6:
+            //multiplicação da quantidade do produto com o produto do dicionário
+            let totalCod6 = quantidade * produtos[6];
+            console.log(`O valor total referente ao produro (Bermuda) é: R$${totalCod6.toFixed(2)}`);
+            console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+            break;
+
+        default:
+            //validando códigos digitados erradamente no submenu
+            console.log('Error - Digita um código válido');
+            break;
+    } 
 }
 
 //função para cálcular aumento salarial

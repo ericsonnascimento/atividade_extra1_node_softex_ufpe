@@ -48,9 +48,9 @@ acima de 601.......................40% do valor do saldo médio<br/>
 <h3>Função 4</h3>
 Um vendedor necessita de um algoritmo que calcule o preço total devido por um cliente. O algoritmo deve receber o código de um produto e a quantidade comprada e calcular o preço total, usando a tabela abaixo:<br/>
 Código do produto  Preço unitário:<br/>
-• 5 ............... R$ 32,00<br/>
-• 6 ............... R$ 45,00<br/>
-• 2 ............... R$ 37,00<br/>
+• 2 ............... R$ 32,00<br/>
+• 3 ............... R$ 45,00<br/>
+• 4 ............... R$ 37,00<br/>
 • 5 ............... R$ 32,00<br/>
 • 6 ............... R$ 45,00<br/>
 
